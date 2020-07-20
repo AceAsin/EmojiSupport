@@ -16,10 +16,10 @@ FONTCONFIG_TARGET_DIR="$BUILD_DIR/.config/fontconfig/conf.d/"
 
 echo "-----> Extracting fonts to $TARGET_DIR"
 
-set -x
+# set -x
 mkdir -p "$TARGET_DIR"
 tar -xvzf "$SOURCE_DIR" -C "$TARGET_DIR" | indent
-set +x
+# set +x
 
 echo "-----> Extracting fontconfig to $FONTCONFIG_TARGET_DIR"
 mkdir -p "$FONTCONFIG_TARGET_DIR"
