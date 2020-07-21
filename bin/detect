@@ -1,3 +1,9 @@
 #!/usr/bin/env bash
+# bin/detect <build-dir>
 
-echo "Fonts"
+set -eo pipefail
+
+BUILD_DIR=$1
+CACHE_DIR=$2
+
+echo "Noto Fonts Buildpack" && exit 0
