@@ -27,16 +27,6 @@ else
   export HUGO_VERSION=$NOTO_FONT_URL
 fi
 
-
-# attempt to extract the NOTO_FONT_URL parameter form the Heroku configuration vars, fall back to the default version if unavailable
-if [ -d "$ENV_DIR" -a -e "$ENV_DIR/NOTO_CJK_URL" ]; then
-  export NOTO_CJK_URL=$(cat "$ENV_DIR/NOTO_CJK_URL")
-else
-  print "Noto CJK font URL not defined, using $NOTO_CJK_URL."
-  export HUGO_VERSION=$NOTO_CJK_URL
-fi
-
-
 mkdir -p $CACHE_DIR
 
 print "Downloading regular fonts"
@@ -48,4 +38,3 @@ rm noto-fonts.zip
 print "Copying fonts to app folder"
 mkdir $BUILD_DIR/.fonts
 cp $CACHE_DIR/noto-fonts/* $BUILD_DIR/.fonts/
-cp $CACHE_DIR/noto-cjk-fonts/* $BUILD_DIR/.fonts/
